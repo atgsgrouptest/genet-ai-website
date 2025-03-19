@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing | genet.ai</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/akshathsk/image-upload/main/images/Transparent.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Caudex&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #13294B;
+            --secondary: #FF5F05;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--primary);
+            background: #fff;
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-font {
+            font-family: 'Caudex', serif;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            font-family: 'Caudex', serif;
+        }
+
+        .logo-link {
+            text-decoration: none;       /* Removes underline */
+            color: inherit;              /* Inherits text color */
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-link:hover {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;             /* Optional: show pointer on hover */
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .pricing {
+            padding: 8rem 5% 6rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            align-items: stretch; /* Align all cards to equal height */
+        }
+
+        .pricing-card {
+            background: #f9f9f9;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 2.5rem;
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .price span {
+            display: block;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .best-value {
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-top: 4rem;
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <span class="logo-container">
+        <a href="index.html" class="logo-link">
+            <span class="logo-container">
+                <img src="https://raw.githubusercontent.com/akshathsk/image-upload/main/images/Transparent.png" alt="genet.ai Logo" style="height: 70px; margin-right: 10px;">
+                <div class="logo logo-font">genet.<span class="logo-font">ai</span></div>
+            </span>
+        </a>
+    </span>
+    <div class="nav-links">
+        <a href="index.html#product">Product</a>
+        <a href="index.html#integrations">Integrations</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#benefits">Benefits</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="cta-button">Get Started</a>
+</nav>
+
+<!-- Pricing Section -->
+<section class="pricing">
+    <h2 class="section-title">Pricing</h2>
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Monthly License</h3>
+            <p class="price">$2,999<span>/month</span></p>
+            <ul>
+                <li>Unlimited Test Generation</li>
+                <li>Full CI/CD Integrations</li>
+                <li>Advanced Analytics & Reporting</li>
+                <li>Priority Support</li>
+                <li><strong>15-Day Free Trial Included</strong></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Contact Sales</a>
+        </div>
+        <div class="pricing-card best-value">
+            <div class="badge">Best Value</div>
+            <h3>Annual License</h3>
+            <p class="price">$2,499<span>/month billed annually</span></p>
+            <ul>
+                <li>Everything in Monthly</li>
+                <li>One Free Month</li>
+                <li>Dedicated Onboarding</li>
+                <li><strong>15-Day Free Trial Included</strong></li>
+            </ul>
+            <a href="index.html#contact" class="cta-button">Contact Sales</a>
+        </div>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 1rem; color: #333;">
+        You can also reach us directly at <strong>sales@genet.ai</strong>
+    </p>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+</section>
+</body>
+</html>
