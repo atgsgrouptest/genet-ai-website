@@ -21,7 +21,7 @@
         });
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>genet.ai | AI-Powered API Testing Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="https://raw.githubusercontent.com/akshathsk/image-upload/main/images/Transparent.png" type="image/png">
@@ -62,7 +62,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
+            }
 
         .logo {
             font-size: 1.8rem;
@@ -145,6 +145,59 @@
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: repeat(2, 200px);
+            }
+
+            /* Make nav relative so it scrolls with the page */
+            nav {
+                position: relative;
+                padding: 0.5rem 2%;
+            }
+            
+            /* Scale down the logo image */
+            .logo-container img {
+                height: 60px;
+                margin-top: 0;
+            }
+            
+            /* Reduce font sizes and spacing for nav links and CTA button */
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            /* Adjust hamburger icon if using the toggle version */
+            .hamburger {
+                display: block;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+            
+            /* Hide the nav menu by default and adjust its layout */
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--white);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                padding: 1rem 0;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .cta-button {
+                margin-top: 1rem;
             }
         }
 
@@ -436,26 +489,80 @@
             vertical-align: middle;
         }
 
+        /* Hide the hamburger by default */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Normal desktop nav-menu display */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .hamburger {
+    display: block;
+  }
+  /* Hide the nav menu initially */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--white);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+  }
+  /* Show menu when active */
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cta-button {
+    margin-top: 1rem;
+  }
+}
+
     </style>
 </head>
 <body>
-<nav>
+    <nav>
         <span class="logo-container">
           <a href="#">
             <img src="https://raw.githubusercontent.com/akshathsk/image-upload/main/images/Transparent.png" alt="genet.ai Logo" style="height: 100px; margin-top: 7px;">
           </a>
-          <div class="logo logo-font">genet.<span class = "logo-font">ai</span></div>
+          <div class="logo logo-font">genet.<span class="logo-font">ai</span></div>
         </span>
-        <div class="nav-links">
+        <!-- Hamburger Icon (hidden on desktop) -->
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+          <div class="nav-links">
             <a href="#product">Product</a>
             <a href="#integrations">Integrations</a>
             <a href="#features">Features</a>
             <a href="#benefits">Benefits</a>
             <a href="#contact">Contact</a>
-            <a href="pricing.html">Pricing</a>
+            <!-- <a href="pricing.html">Pricing</a> -->
+          </div>
+          <a href="#contact" class="cta-button" style="background: var(--secondary);">Get Started</a>
         </div>
-    <a href="#contact" class="cta-button" style="background: var(--secondary);">Get Started</a>
-</nav>
+      </nav>
 
 <section class="banner">
     <div class="banner-overlay" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
@@ -486,6 +593,7 @@
       </div>
     </div>
   </section>
+  
 
 <!-- What is genet.ai? Section -->
 <section id="product" class="features">
@@ -522,6 +630,12 @@
         });
     </script>
 </section>
+
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+    });
+  </script>
 
 <!-- Seamless Integrations Section (moved below "What is genet.ai?") -->
 <section id="integrations" class="integrations">
